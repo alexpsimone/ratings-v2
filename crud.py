@@ -30,7 +30,7 @@ def create_movie(title, overview, release_date, poster_path):
 def return_movies():
     """Return all the movies."""
 
-   return Movie.query.all()
+    return Movie.query.all()
 
 
 def create_rating(score, movie, user):

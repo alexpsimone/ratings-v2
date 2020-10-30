@@ -3,7 +3,11 @@
 {% block title %}All Movies{% endblock %}
 
 {% block body %}
-{% for movie in movies %}
-    <p>{{ movie }}</p>
-{% endfor %}
+<ul>
+    {% for movie in movies %}
+        <li>
+            <a href='/movies/{{ movie.movie_id }}'>{{ movie.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}
