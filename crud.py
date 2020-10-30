@@ -3,6 +3,7 @@
 from model import db, User, Movie, Rating, connect_to_db
 import datetime
 
+
 def create_user(my_email, my_password):
     """Create and return a new user."""
     
@@ -12,6 +13,19 @@ def create_user(my_email, my_password):
     db.session.commit()
 
     return user
+
+
+def return_users():
+    """Return all the users."""
+
+    return User.query.all()
+
+
+def get_user_by_id(user_id):
+    """Return a user by user_id."""
+
+    return User.query.get(user_id)
+
 
 def create_movie(title, overview, release_date, poster_path):
     """Create and return a new movie."""
@@ -31,6 +45,7 @@ def return_movies():
     """Return all the movies."""
 
     return Movie.query.all()
+
 
 def get_movie_by_id(movie_id):
     """Return a movie by movie_id."""
