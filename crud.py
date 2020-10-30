@@ -32,6 +32,11 @@ def return_movies():
 
     return Movie.query.all()
 
+def get_movie_by_id(movie_id):
+    """Return a movie by movie_id."""
+
+    return Movie.query.get(movie_id)
+
 
 def create_rating(score, movie, user):
     """Creat and return a rating."""
