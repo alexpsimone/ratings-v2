@@ -22,7 +22,7 @@ def homepage():
 @app.route('/movies')
 def all_movies():
     """View all movies."""
-    
+
     movies = crud.return_movies()
 
     return render_template('all_movies.html', movies=movies)
