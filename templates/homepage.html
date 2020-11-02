@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Movie Ratings Home {% endblock%}
+{% block title %} Movie Ratings Home {% endblock %}
 
 {% block body %}
 <h1>Welcome!</h1>
@@ -24,4 +24,20 @@
         <input type="submit">
     </p>
   </form>
+
+  <h2>Login</h2>
+  <form action="/login" method="POST">
+    <p>
+        Email <input type="text" name="email">
+    </p>
+
+    <p>
+        Password <input type="password" name="password">
+    </p>
+
+    <p>
+        <input type="submit">
+    </p>
+  </form>
+
 {% endblock %}

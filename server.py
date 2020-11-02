@@ -70,6 +70,25 @@ def display_user(user_id):
     return render_template('user_details.html', user=user)
 
 
+@app.route("/login", methods=["POST"])
+def login_user():
+    """Log in a user."""
+
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    user  = crud.get_user_by_email(email)
+
+    if user.password == password:
+        session['current_user'] = user.user_id
+        flash("Logged in!")
+        print(session)
+    else:
+        flash("Password incorrect!")
+
+    return redirect('/')
+
+
 if __name__ == '__main__':
     connect_to_db(app) ## func from model.py
     app.run(host='0.0.0.0', debug=True)
